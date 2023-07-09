@@ -3,6 +3,7 @@ from .models import Board
 from .models import Comment
 from .serializers import BoardSerializer
 from .serializers import CommentSerializer
+from .serializers import UniversitySerializer
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
@@ -77,3 +78,13 @@ class CommentList(ListCreateAPIView):
         user = self.request.user
         serializer.save(user=user)
 
+class UniversityList(ListCreateAPIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    serializer_class = UniversitySerializer
+
+    def get_queryset(request):
+        university_id = request.kwargs.get('university')
+        queryset = Board.objects.select_related('user').filter(user__university=university_id)
+        return queryset

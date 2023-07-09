@@ -29,3 +29,14 @@ class BoardSerializer(serializers.ModelSerializer):
         return serializer.data
 
 
+class UniversitySerializer(serializers.ModelSerializer):
+    university = serializers.CharField(source='user.university', read_only=True)
+
+    class Meta:
+        model = Board
+        fields = ['university', 'id', 'user', 'title', 'body']
+
+    def get_university(self, obj):
+        boards = Board.objects.filter(university=obj)
+        serializer = BoardSerializer(boards, many=True)
+        return serializer.data

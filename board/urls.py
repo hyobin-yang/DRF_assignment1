@@ -9,5 +9,6 @@ urlpatterns = [
     path('<int:pk>/update/', BoardDetail.as_view(), name='board-update'),
     path('<int:pk>/destroy/', BoardDetail.as_view(), name='board-destroy'),
     path('<int:pk>/comments/', CommentList.as_view(), name='board-comments'),
+    path('<str:university>/', UniversityList.as_view(), name='board-university'),
 ]
 

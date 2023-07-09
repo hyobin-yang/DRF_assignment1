@@ -23,3 +23,17 @@ class SignupSerializer(serializers.ModelSerializer):
 # "nickname" : "likelion",
 # "university" : "hufs"
 # }
+
+# {
+# "username" : "kitten",
+# "password" : "1234",
+# "nickname" : "야옹이",
+# "university" : "YONSEI"
+# }
+
+# {
+# "username" : "singularity",
+# "password" : "1234",
+# "nickname" : "뚜뚜",
+# "university" : "YONSEI"
+# }
