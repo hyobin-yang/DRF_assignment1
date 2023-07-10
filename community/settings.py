@@ -131,4 +131,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = 'members.CustomUser' 
 # members 앱에 만든 CustomUser 모델을 통해 장고에서 제공하는 로그인, 회원가입 위한 auth 기능 사용하기 위함
 
-CSRF_TRUSTED_ORIGINS = ['http://port-0-drf-assignment1-20zynm2mljuwizjg.sel4.cloudtype.app']
+CSRF_TRUSTED_ORIGINS = ['https://port-0-drf-assignment1-20zynm2mljuwizjg.sel4.cloudtype.app']
